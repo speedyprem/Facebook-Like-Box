@@ -8,17 +8,13 @@ Author: Prem Tiwari
 Author URI: https://www.freewebmentor.com
 License: GPL2
 */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 
-
-
-if (!defined('ABSPATH')){ exit; }
-
-// Define plugin name
+/* Constant Declaration */
 define('fm_notification_bar', 'FM Notification Bar');
-
-// Define plugin version
 define('fm_notification_bar_version', '1.0.0');
-
 
 if (is_admin()) {
     include_once('admin/settings.php');
