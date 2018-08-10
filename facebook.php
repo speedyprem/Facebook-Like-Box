@@ -8,6 +8,7 @@ Author: Prem Tiwari
 Author URI: https://www.freewebmentor.com
 License: GPL2
 */
+error_reporting(1);
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
@@ -15,9 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /* Constant Declaration */
 define('fm_notification_bar', 'FM Notification Bar');
 define('fm_notification_bar_version', '1.0.0');
+define("PAGE_URL", "fm-notification-bar");
 
 if (is_admin()) {
     include_once('admin/settings.php');
+    include_once('includes/widgets.php');
 }
 
 $fmnb_options = get_option('fmnb_settings');
@@ -26,7 +29,9 @@ add_action('admin_head', 'fm_extra_fee_style');
 add_action('wp_head', 'fm_notification_bar_style');
 
 function fm_extra_fee_style() {
-    wp_enqueue_style('fm_admin_style',plugins_url("css/admin.css",__FILE__));  
+    if(PAGE_URL==$_REQUEST['page']){
+        wp_enqueue_style('fm_admin_style',plugins_url("css/admin.css",__FILE__));    
+    }
 }
 
 function fm_notification_bar_style() {
@@ -59,4 +64,3 @@ function fm_notification_bar() {
 <?php } }
 
 add_action( 'wp_head', 'fm_notification_bar' );
-
