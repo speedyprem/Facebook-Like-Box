@@ -3,6 +3,8 @@
  * FM Facebook Like Box settings page.
  * @author Prem Tiwari
  */
+require_once 'functions.php';
+
 add_action('admin_menu', 'fm_notification_bar_settings');
 
 function fm_notification_bar_settings() {
@@ -15,34 +17,34 @@ function fm_notification_bar_init() {
     $page_url = $_REQUEST['page'];
     ?>
 
-<div>               
-     <br>
+    <div>               
+        <br>
         <div class="w3-sidebar w3-bar-block w3-light-grey w3-card">
             <a class="plugin-logo" href="https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html" target="_blank">
-                <img src="<?php echo plugins_url('../img/plugin-logo.png', __FILE__)?>">
+                <img src="<?php echo plugins_url('../img/plugin-logo.png', __FILE__) ?>">
             </a>
 
             <a class="w3-bar-item w3-button tablink active w3-red" onclick="openCity(event, 'rflb-flb')">Facebook Like Box</a>
             <a class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Settings')">Settings</a>
             <a href="https://wordpress.org/support/plugin/responsive-facebook-like-box/" target="_blank" class="w3-bar-item w3-button">Ask For Help</a>
         </div>
-
+        <?php echo '<div style="width:71.5%;margin-left:208px;" class="updated notice notice-success is-dismissible"><p>Setting updated.</p></div>'; ?>
         <div class="rflb-context-box">
             <div id="rflb-flb" class="w3-container city">
                 <h2>Facebook Like Box</h2>
                 <p>London is the capital city of England.</p>
                 <p>It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants  Kingdom, with a metropolitan area of over 13 million inhabitants  Kingdom, with a metropolitan area of over 13 million inhabitants Kingdom, with a metropolitan area of over 13 million inhabitants Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
             </div>
-
             <div id="Settings" class="w3-container city" style="display:none">
                 <h2>Settings</h2>
-                  <form action="">
-                    <label for="country">Delete table at uninstall </label>
-                    <select id="country" class="w3-select w3-border" name="country">
-                      <option value="australia">Enable</option>
-                      <option value="canada">Disable</option>
-                    </select> <input type="submit" class="w3-btn w3-blue" value="Submit">
-                  </form>
+                <form action="" method="POST" class="w3-container">
+                    <label for="db_settings">Want to delete table at uninstall?</label>
+                    <select id="db_settings" class="w3-select w3-border" name="db_settings">
+                        <option value="yes"<?php if (get_rflb_settings('db_settings') == "yes"): ?> selected="selected"<?php endif; ?>>Yes</option>
+                        <option value="no"<?php if (get_rflb_settings('db_settings') == "no"): ?> selected="selected"<?php endif; ?>>No</option>
+                    </select>
+                    <input type="submit" name="save_settings" class="w3-btn w3-blue" value="Submit">
+                </form>
             </div>
         </div>
         <script>
@@ -61,11 +63,24 @@ function fm_notification_bar_init() {
             }
         </script>
 
-        <p>&nbsp;</p>
-        <!-- <p><input type="submit" name="Submit" class="button-primary" value="<?php _e("Save Changes", fm_notification_bar); ?>"></p> -->
     </form>                    
     </div>
     <?php
+// Update plugin settings
+    if (isset($_REQUEST['save_settings'])) {
+        // set the variables
+        if ($_POST['db_settings']) {
+            $db_settings = $_POST['db_settings'];
+        }
+        //update in option table
+        global $wpdb;
+        $data = array('meta_key' => 'db_settings', 'meta_value' => $db_settings);
+        $where = array('meta_key' => 'db_settings');
+        $wpdb->update('fwm_facebook_like_box', $data, $where);
+        //need to print message here
+
+        wp_redirect(wp_get_referer());
+    }
 }
 
 function fm_notification_bar_register_settings() {
