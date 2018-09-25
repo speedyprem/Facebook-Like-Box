@@ -18,12 +18,12 @@ $themater_facebook_defaults = array(
     'border' => '#ffffff'
 );
 
-$theme->options['widgets_options']['facebook'] =  isset($theme->options['widgets_options']['facebook'])
+$theme->options['widgets_options']['facebook'] =  isset( $theme->options['widgets_options']['facebook'] )
     ? array_merge($themater_facebook_defaults, $theme->options['widgets_options']['facebook'])
     : $themater_facebook_defaults;
 
 
-add_action( 'widgets_init', function() {
+add_action( 'widgets_init', function () {
     return register_widget("ThematerFacebook");
 } );
 
@@ -34,11 +34,13 @@ class ThematerFacebook extends WP_Widget
         parent::__construct(
             'themater_facebook',
             '&raquo; Facebook Like Box',
-            array( 'description' => ('Facebook Like Box social widget. Enables Facebook Page owners to attract and gain Likes from their own website.')
-            ));
+            array( 'description' => ('Facebook Like Box social widget enables 
+            facebook page owners to attract & gain likes from their website.')
+            )
+        );
     }
 
-    function widget($args, $instance)
+    function widget( $args, $instance )
     {
         global $wpdb, $theme;
         extract( $args );
@@ -64,7 +66,10 @@ class ThematerFacebook extends WP_Widget
 
         <?php
     }
-    function update($new_instance, $old_instance)
+    /**
+     * Update the $old_instance values with $new_instance in widgets
+     */
+    function update( $new_instance, $old_instance )
     {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
@@ -82,23 +87,19 @@ class ThematerFacebook extends WP_Widget
     function form($instance)
     {
         global $theme;
-        $instance = wp_parse_args( (array) $instance, $theme->options['widgets_options']['facebook'] );
-
+        $instance = wp_parse_args((array) $instance, $theme->options['widgets_options']['facebook']);
         ?>
-
         <div class="tt-widget">
             <table width="100%">
                 <tr>
                     <td class="tt-widget-label" width="30%"><label for="<?php echo $this->get_field_id('title'); ?>">Title:</label></td>
                     <td class="tt-widget-content" width="70%"><input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" /></td>
                 </tr>
-
                 <tr>
                     <td class="tt-widget-label"><label for="<?php echo $this->get_field_id('url'); ?>">Facebook Page URL:</label></td>
                     <td class="tt-widget-content"><input class="widefat" id="<?php echo $this->get_field_id('url'); ?>" name="<?php echo $this->get_field_name('url'); ?>" type="text" value="<?php echo esc_attr($instance['url']); ?>" /></td>
                 </tr>
-
-                <tr>
+                <tr> 
                     <td class="tt-widget-label">Color Scheme:</td>
                     <td class="tt-widget-content">
                         <select name="<?php echo $this->get_field_name('colorscheme'); ?>">
@@ -108,7 +109,6 @@ class ThematerFacebook extends WP_Widget
                         &nbsp; &nbsp; Border Color: <input type="text" style="width: 50px;" name="<?php echo $this->get_field_name('border'); ?>" value="<?php echo esc_attr($instance['border']); ?>" /> <em>e.g: #ffffff</em>
                     </td>
                 </tr>
-
                 <tr>
                     <td class="tt-widget-label">Misc Options:</td>
                     <td class="tt-widget-content">
@@ -117,10 +117,8 @@ class ThematerFacebook extends WP_Widget
                         <br /><input type="checkbox" name="<?php echo $this->get_field_name('header'); ?>"  <?php checked('true', $instance['header']); ?> value="true" />  <?php _e('Show Header', 'themater'); ?>
                     </td>
                 </tr>
-
             </table>
         </div>
-
         <?php
     }
 }
