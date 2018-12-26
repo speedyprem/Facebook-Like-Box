@@ -18,7 +18,7 @@ You can read more about Responsive Facebook Like Box from [here](https://www.fre
 
 Need more detailed installation instructions?
 
-[Read more...](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html).
+[Read more](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html)
 
 ## License
 
