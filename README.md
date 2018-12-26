@@ -1,4 +1,4 @@
-<p align="center">#Reasponsive Facebook Like Box</p>
+<h1 align="center">Reasponsive Facebook Like Box</h1>
 
 <p align="center"><a href="https://wordpress.org/plugins/responsive-facebook-like-box/"><img src="https://img.shields.io/wordpress/plugin/v/responsive-facebook-like-box.svg" alt="Latest Stable Version"></a> <a href="https://wordpress.org/plugins/responsive-facebook-like-box/"><img src="https://img.shields.io/wordpress/v/responsive-facebook-like-box.svg" alt="Version Tested"></a> <a href="https://wordpress.org/plugins/responsive-facebook-like-box/"><img src="https://img.shields.io/wordpress/plugin/dt/responsive-facebook-like-box.svg" alt="Downloads"></a> <a href="https://wordpress.org/plugins/responsive-facebook-like-box/"><img src="https://img.shields.io/wordpress/plugin/r/responsive-facebook-like-box.svg" alt="Rating"></a> <a href="https://wordpress.org/plugins/responsive-facebook-like-box/"><img src="https://img.shields.io/aur/license/yaourt.svg" alt="Licence"></a></p>
 
