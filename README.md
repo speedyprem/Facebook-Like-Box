@@ -8,18 +8,17 @@ Facebook Like Box social widget enables Facebook Page owners to attract and gain
 
 You can read more about Responsive Facebook Like Box from [here](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html).
 
-## Getting Started
+## Installation
 
-Login in your WordPress admin panel.
-Navigate to Plugins => Add New from left menu bar.
-Now search “responsive facebook like box” in search box.
-Click on Install Now button
-Then activate the plugin.
-Go to your Appearance => Widgets page and add Widget Facebook like box to your sidebar.
+* Login in your WordPress admin panel.
+* Navigate to Plugins => Add New from left menu bar.
+* Now search “responsive facebook like box” in search box.
+* Click on Install Now button and click on activate button to activate the plugin.
+* Navigate to the Appearance => Widgets page and add Widget Facebook like box to your sidebar.
 
 Need more detailed installation instructions?
 
-[Visit here](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html).
+[Read here](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html).
 
 ## License
 
