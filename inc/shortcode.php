@@ -10,6 +10,9 @@ class RflbShortcode {
 		}
 	}
 
+	/**
+	 * rflb_shortcode function added facebook like box for all singular pages.
+	 */
 	public function rflb_shortcode() {
 		if ( is_singular() ) {
 			$widget_themater_facebook = get_option( 'widget_themater_facebook', true );

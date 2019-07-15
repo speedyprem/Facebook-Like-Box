@@ -3,7 +3,7 @@
 Plugin Name: Responsive Like Box
 Plugin URI: https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html
 Description: This plugin helps you create a simple widgets for facebook like box in WordPress.
-Version: 2.2.7
+Version: 3.0.0
 Author: Prem Tiwari
 Author URI: https://www.freewebmentor.com
 License: GPL2

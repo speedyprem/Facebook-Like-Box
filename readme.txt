@@ -3,7 +3,7 @@ Contributors: freewebmentor
 Tags: facebook, likebox, facebook like, pages, facebook box , facebook like box, post to facebook, sharebar, sidebar, social, Social Plugins, social profiles, social share, social sidebar, wordpress like, seo, meta, Facebook like box widget, facebook like,  facebook like button, facebook button, facebook facepile, like box facebook, like box widget, facebook likebox, facebook like box shortcode, likebox, wordpress facebook like box
 Requires at least: 3.0
 Stable tag: trunk
-Tested up to: 5.0
+Tested up to: 5.2.2
 
 
 Responsible Facebook Like Box in your WordPress sidebar widgets.
@@ -60,6 +60,13 @@ Tags: facebook, likebox, facebook like, pages, facebook box , facebook like box,
 For more : [Click Here](https://www.freewebmentor.com/2013/10/facebook-like-box-wordpress.html)
 
 == Changelog ==
+
+= 3.0.0 =
+
+* Added Features:
+1) Removed unused codes
+2) Added shortcode features
+3) Code formated as per PSR standard
 
 = 2.2.6 =
 
