@@ -1,9 +1,9 @@
-=== Responsive Facebook Like Box, Facebook Like Box Widget ===
+=== Responsive Like Box, Like Box Widget ===
 Contributors: freewebmentor
 Tags: facebook, likebox, facebook like, pages, facebook box , facebook like box, post to facebook, sharebar, sidebar, social, Social Plugins, social profiles, social share, social sidebar, wordpress like, seo, meta, Facebook like box widget, facebook like,  facebook like button, facebook button, facebook facepile, like box facebook, like box widget, facebook likebox, facebook like box shortcode, likebox, wordpress facebook like box
 Requires at least: 3.0
 Stable tag: trunk
-Tested up to: 5.0.2
+Tested up to: 5.2.2
 
 
 Responsible Facebook Like Box in your WordPress sidebar widgets.
