@@ -8,6 +8,11 @@ Author: Prem Tiwari
 Author URI: https://www.freewebmentor.com
 License: GPL2
 */
+
+
+//include shortcode feature file
+include_once( plugin_dir_path( __FILE__ ) . 'inc/shortcode.php' );
+
 class ResponsiveFacebookLikeBox extends WP_Widget
 {
 	function __construct()
@@ -21,6 +26,7 @@ class ResponsiveFacebookLikeBox extends WP_Widget
 
 	function widget($args, $instance)
 	{
+		echo 'Hello';
 		$title = apply_filters('widget_title', $instance['title']);
 		$url = $instance['url'];
 		$show_faces = $instance['show_faces'] == 'true' ? 'true' : 'false';
