@@ -24,13 +24,13 @@ class ResponsiveFacebookLikeBox extends WP_Widget {
 	}
 
 	function widget( $args, $instance ) {
-		echo 'Hello';
-		$title      = apply_filters( 'widget_title', $instance['title'] );
-		$url        = $instance['url'];
-		$show_faces = $instance['show_faces'] == 'true' ? 'true' : 'false';
-		$stream     = $instance['stream'] == 'true' ? 'true' : 'false';
-		$header     = $instance['header'] == 'true' ? 'true' : 'false';
-		$border     = $instance['border'];
+		$title       = apply_filters( 'widget_title', $instance['title'] );
+		$url         = $instance['url'];
+		$colorscheme = $instance['colorscheme'];
+		$show_faces  = $instance['show_faces'] == 'true' ? 'true' : 'false';
+		$stream      = $instance['stream'] == 'true' ? 'true' : 'false';
+		$header      = $instance['header'] == 'true' ? 'true' : 'false';
+		$border      = $instance['border'];
 		?>
 
 		<?php if ( $title ) { ?> <h3 class="widgettitle"><?php echo $title; ?></h3> <?php } ?>
@@ -45,10 +45,13 @@ class ResponsiveFacebookLikeBox extends WP_Widget {
                 js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
-		<div class="fb-like-box" data-href="<?php echo $url; ?>" data-width="" data-height=""
-			 data-colorscheme="<?php echo $colorscheme; ?>" data-show-faces="<?php echo $show_faces; ?>"
-			 data-stream="<?php echo $stream; ?>" data-header="<?php echo $header; ?>"
-			 data-border-color="<?php echo $border; ?>"></div>
+		<div class="fb-like-box" data-href="<?php echo $url; ?>"
+			 data-colorscheme="<?php echo $colorscheme; ?>"
+			 data-show-faces="<?php echo $show_faces; ?>"
+			 data-stream="<?php echo $stream; ?>"
+			 data-header="<?php echo $header; ?>"
+			 data-border-color="<?php echo $border; ?>">
+		</div>
 
 		<?php
 	}
@@ -57,8 +60,6 @@ class ResponsiveFacebookLikeBox extends WP_Widget {
 		$instance                = $old_instance;
 		$instance['title']       = strip_tags( $new_instance['title'] );
 		$instance['url']         = strip_tags( $new_instance['url'] );
-		$instance['width']       = strip_tags( $new_instance['width'] );
-		$instance['height']      = strip_tags( $new_instance['height'] );
 		$instance['colorscheme'] = strip_tags( $new_instance['colorscheme'] );
 		$instance['show_faces']  = strip_tags( $new_instance['show_faces'] );
 		$instance['stream']      = strip_tags( $new_instance['stream'] );
