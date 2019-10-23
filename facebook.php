@@ -9,7 +9,6 @@ Author URI: https://www.freewebmentor.com
 License: GPL2
 */
 
-
 //include shortcode feature file
 include_once( plugin_dir_path( __FILE__ ) . 'inc/shortcode.php' );
 
